@@ -1,0 +1,24 @@
+<ion-view view-title="Playlist">
+  <ion-content>
+    <h1>Commits</h1>
+    <div class="list card" ng-repeat="data in repoInfo">
+
+      <div class="item item-avatar">
+        <img src="{{ data.author.avatar_url }}">
+        <h2>{{ data.commit.author.name }}</h2>
+        <h3>{{ data.commit.author.date | date:'yyyy-MM-dd HH:mm:ss' }}</h3>
+
+      </div>
+
+      <div class="item item-text-wrap">
+        <h3>{{ data.commit.message }}</h3>
+      </div>
+
+      <a class="item item-icon-left assertive">
+        <i class="icon ion-email"></i>
+        {{ data.commit.author.email }}
+      </a>
+
+    </div>
+  </ion-content>
+</ion-view>
